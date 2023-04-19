@@ -1,0 +1,23 @@
+{
+  "name": "source",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaereanLegrand/EVENT-HUB-SOURCE.git"
+  },
+  "author": "FRANK SALAS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaereanLegrand/EVENT-HUB-SOURCE/issues"
+  },
+  "homepage": "https://github.com/DaereanLegrand/EVENT-HUB-SOURCE#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
