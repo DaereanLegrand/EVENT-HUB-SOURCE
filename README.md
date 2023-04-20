@@ -1,4 +1,7 @@
-Integrantes:
+# Integrantes:
 - Mauricio Nicolas Colque Morales
-- Frank Roger Salas Ticona
+- Emmanuel Samir Galdos Rodriguez
+- Marco ...
 - Justo Alfredo Perez Choque
+- Frank Roger Salas Ticona
+
