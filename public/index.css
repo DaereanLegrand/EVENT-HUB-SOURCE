@@ -60,3 +60,8 @@ body {
 .register-link {
     color: #1A1A1A;
 }
+
+#show-error {
+    color: red;
+    margin-left: 5px;
+}

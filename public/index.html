@@ -30,7 +30,7 @@
     </nav>
     <div class="mbox m-auto">
       <main class="form-signin w-100 m-auto m-100">
-        <form>
+        <form id="form-signin-true" action="home.html" onsubmit="validateCredentials(event)">
           <h1 class="h3 mb-3 fw-bold">Inicio de sesión</h1>
 
           <div class="form-floating">
@@ -50,7 +50,8 @@
             />
             <label for="floatingPassword">Contraseña</label>
           </div>
-
+          <div id="show-error">
+          </div>
           <button class="w-100 btn btn-lg" id="submit-bt" type="submit">Iniciar sesión</button>
           <div class="register-div">
               <a class="register-link" href="/register.html">¿No tiene cuenta? Regístrese</a>

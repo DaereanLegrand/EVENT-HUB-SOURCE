@@ -1,0 +1,157 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: block;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.mnavbar {
+    background-color: #F5EBEB;
+    margin-bottom: 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.navbar-brand {
+    padding-left: 100px;
+}
+
+.mbox {
+    display: flex;
+    background-color: #F5EBEB;
+    border-radius: 50px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 87%;
+    width: 95%;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.user-ident {
+    display: flex;
+}
+
+.user-ident-text {
+    display: block;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.user-image {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.flexb {
+    display: flex;
+}
+
+.show-event {
+    display: block;
+    width: 60%;
+}
+
+.events-shower {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#events-title {
+    margin-top: 5%;
+}
+
+.future-events {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-events-box {
+    display: block;
+    width: 80%;
+    height: 80%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50px;
+}
+
+.list-events-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.list-events {
+    display: block;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50px;
+    width: 80%;
+}
+
+.list-events2 {
+    display: block;
+    width: 90%; 
+    padding-left: 5%;
+    padding-right: 5%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.search-box-div {
+    display: flex;
+    width: 70%;
+}
+
+.image-lupa {
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mevento {
+    display: flex;
+    padding: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.img-evento {
+    height: 130px;
+}
+
+.name-evento {
+    margin-left: 20px;
+    margin-right: 20px;
+    align-self: center;
+}
