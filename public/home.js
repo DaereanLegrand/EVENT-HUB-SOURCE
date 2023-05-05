@@ -72,8 +72,8 @@ function userHome() {
           </button>
         </div>
         <div id="events-title" class="events-shower">
-            <h1 class="display-4" >En este instante:</h1>
-            <h1 class="display-4" id="title">Congreso de Videojuegos 2023</h1>
+            <h1 class="display-4 font-weight-bold" >En este instante:</h1>
+            <h1 class="display-4 font-weight-bold" id="title">Congreso de Videojuegos 2023</h1>
         </div>
       </div>
       <div class="future-events">
@@ -116,18 +116,18 @@ function userHome() {
               <div class="mevento">
                 <img
                   class="img-evento"
-                  src="/images/fiesta.png"
+                  src="/images/game.png"
                   alt="..."
                 />
                 <h4 class="name-evento">
-                  Evento Interescuelas
+                  Ponencia de Videojuegos
                 </h4>
               </div>
             
               <div class="mevento">
                 <img
                   class="img-evento"
-                  src="/images/fiesta.png"
+                  src="/images/teatro.png"
                   alt="..."
                 />
                 <h4 class="name-evento">

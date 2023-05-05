@@ -36,6 +36,8 @@ body {
 
 .user-ident {
     display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .user-ident-text {
@@ -144,6 +146,7 @@ body {
     border-radius: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+    background-color: #E4D0D0;
 }
 
 .img-evento {
@@ -154,4 +157,15 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     align-self: center;
+}
+
+.btn{
+    border-color: black !important; 
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    color: black !important;
+    background-color: #E4D0D0 !important;
+    margin-left: 10px;
+    margin-right: 10px;
 }
