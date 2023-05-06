@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Elements with Arrows</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+      integrity="sha512-QvMQ8gWJ0yoKjHd7Yh32v/S8eb0W1uzUIPFZ/oFwjQXo20T8TlHCKjKdrcYATmCg/b1JWm4+f4d+ZEnj+bXAcg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar mnavbar">
+      <a class="navbar-brand" href="#">
+        <img
+          src="LOGO.png"
+          width="96"
+          height="50"
+          class="d-inline-block align-top"
+          alt=""
+        />
+      </a>
+    </nav>
+    <div class="mbox m-auto">
+      <main class="form-signin w-100 m-auto m-100">
+        <div class="row justify-content-center">
+          <h1 class="h3 mb-3 fw-bold">Paquete</h1>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <button class="btn btn-primary" id="prev" disabled>
+                      <i class="bi bi-arrow-left"></i>
+                    </button>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="box" id="box1">
+                      <h2>Box 1</h2>
+                      <p>This is the content of box 1</p>
+                    </div>
+                    <div class="box" id="box2">
+                      <h2>Box 2</h2>
+                      <p>This is the content of box 2</p>
+                    </div>
+                    <div class="box" id="box3">
+                      <h2>Box 3</h2>
+                      <p>This is the content of box 3</p>
+                    </div>
+                    <div class="box" id="box4">
+                      <h2>Box 4</h2>
+                      <p>This is the content of box 4</p>
+                    </div>
+
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <button class="btn btn-primary" id="next">
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      let currentBoxIndex = 0;
+
+      function updateButtons() {
+        if (currentBoxIndex === 0) {
+          document.querySelector("#prev").disabled = true;
+        } else {
+          document.querySelector("#prev").disabled = false;
+        }
+
+        if (currentBoxIndex === boxes.length - 3) {
+          document.querySelector("#next").disabled = true;
+        } else {
+          document.querySelector("#next").disabled = false;
+        }
+              function showCurrentBox() {
+        boxes.forEach((box) => {
+          box.style.display = "none";
+        });
+        boxes[currentBoxIndex].style.display = "block";
+      }
+
+      function nextBox() {
+        if (currentBoxIndex < boxes.length - 1) {
+          currentBoxIndex++;
+          showCurrentBox();
+          updateButtons();
+        }
+      }
+
+      function prevBox() {
+        if (currentBoxIndex > 0) {
+          currentBoxIndex--;
+          showCurrentBox();
+          updateButtons();
+        }
+      }
+
+      // add event listeners for next and previous buttons
+      document.querySelector("#next").addEventListener("click", nextBox);
+      document.querySelector("#prev").addEventListener("click", prevBox);
+
+      // display initial box
+      showCurrentBox();
+      updateButtons();
+    </script>
+  </body>
+</html>
+
+
