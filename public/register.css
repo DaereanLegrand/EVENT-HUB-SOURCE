@@ -68,3 +68,8 @@ body {
     width: 95%;
     margin-bottom: 50px;
 }
+
+#show-error {
+    color: red;
+    margin-left: 10px;
+}

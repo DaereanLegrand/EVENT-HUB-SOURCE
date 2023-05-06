@@ -56,8 +56,8 @@
             <div class="col">
               <label for="inputState">Tipo de documento:</label>
               <select id="inputState" class="form-control">
-                <option selected>DNI</option>
-                <option>Pasaporte</option>
+                <option value="0" selected>DNI</option>
+                <option value="1">Pasaporte</option>
               </select>
             </div>
             <div class="col">
@@ -91,6 +91,8 @@
                 required minlength="8" maxlength="30" pattern="[a-zA-Z0-9].*"
               />
             </div>
+          </div>
+          <div id="show-error">
           </div>
           <div class="submit-btn-div">
             <button class="w-100 btn btn-lg" id="submit-bt" type="submit">

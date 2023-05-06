@@ -2,10 +2,28 @@ function samepass(event) {
   event.preventDefault();
   var pass1 = document.getElementById("upass").value;
   var pass2 = document.getElementById("upassconf").value;
-    
+
   if (pass1 !== pass2) {
-    console.log("Las contraseñas no coinciden");
+    document.getElementById("show-error").innerText =
+      "Error las contraseñas no coinciden.";
     return false;
+  } else {
+      fetch("http://localhost:8080/register", {
+        method: "POST",
+          body: JSON.stringify({
+              usuario: document.getElementById("uname").value,
+              mail: document.getElementById("umail").value,
+              nombres: document.getElementById("nombres").value,
+              apellidos: document.getElementById("apellidos").value,
+              tipo: document.getElementById("inputState").value,
+              documento: document.getElementById("numero-documento").value,
+              contraseña: pass1
+          })
+      }) 
+      .then(response => response.json())
+        .then(data => {
+            document.getElementById("show-error").innerText = data[0];
+        })
   }
 
   document.getElementById("form-register").submit();
