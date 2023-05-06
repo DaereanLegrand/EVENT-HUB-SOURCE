@@ -9,6 +9,7 @@ function samepass(event) {
   var pass1 = document.getElementById("upass").value;
   var pass2 = document.getElementById("upassconf").value;
 
+
   if (pass1 !== pass2) {
     document.getElementById("show-error").innerText =
       "Error las contraseñas no coinciden.";

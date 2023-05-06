@@ -35,18 +35,26 @@
 
           <div class="form-floating">
             <input
+              required
               class="form-control"
               id="floatingInput"
               placeholder="name@example.com"
+              minlength="5"
+              maxlength="20"
+              pattern="[a-zA-Z0-9._\s]+"
             />
             <label for="floatingInput">Correo electrónico</label>
           </div>
           <div class="form-floating">
             <input
+              required
               type="password"
               class="form-control"
               id="floatingPassword"
               placeholder="Password"
+              minlength="8"
+              maxlength="30"
+              pattern="[a-zA-Z0-9].*"
             />
             <label for="floatingPassword">Contraseña</label>
           </div>
