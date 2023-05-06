@@ -58,24 +58,12 @@
   <img src="images/boleta.jpg" alt="Descripción de la imagen" class="boleta" id="imagen">
   
         <form id="contenido">
-			<button class="w-100 btn btn-dr" id="descargar-bt" type="submit"><h3>Descargar recibo</h3></button>
-          <button class="w-100 btn btn-ct" id="continuar-bt" type="submit"><h3>Continuar</h3></button>
+			<button class="w-100 btn btn-dr" id="descargar-bt"><h3>Descargar recibo</h3></button>
+          <button class="w-100 btn btn-ct" id="continuar-bt" onclick="location.href='/inscripcionGuardada.html'"><h3>Continuar</h3></button>
 
         </form>
       </main>
     </div>
     </div>
-    <script type="text/javascript">
-      const buttons = document.getElementById("continuar-bt");
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            location.href = "home.html";
-        });
-      });
-  </script>
-     
-
-      
-  </script>
   </body>
 </html>
