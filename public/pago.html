@@ -52,8 +52,7 @@
 	
       <main class="form-signin w-100 m-auto m-100">
 
-  <!--<img src="img/boleta.jpg" alt="Descripción de la imagen">//-->
-    <!-- Tus elementos de llenado aquí -->
+
 		<div class="outer-box">
   			<div class="left-box">
   			             Lista de Pago 
@@ -82,17 +81,17 @@
           <div class="form-row">
 			  <div class="form-group">
 				 <label for="numTarjeta">Número de tarjeta</label>
-				 <input type="text" class="form-control" id="numTarjeta" placeholder="xxxx-xxxx-xxxx-xxxx" />
+				 <input type="text" class="form-control" id="numTarjeta" placeholder="xxxx-xxxx-xxxx-xxxx" required minlength="16" maxlength="16" pattern="[0-9]{16}"/>
 			  </div>
 
 			  <div class="form-group">
 				 <label for="fechaExpiracion">Día de expiración</label>
-				 <input type="text" class="form-control" id="fechaExpiracion" placeholder="MM/YY" />
+				 <input type="text" class="form-control" id="fechaExpiracion" placeholder="MM/YY" pattern="\d{1,2}/\d{4}" class="datepicker"/>
 			  </div>
 
 			  <div class="form-group">
 				 <label for="codigoSeguridad">Código de seguridad</label>
-				 <input type="text" class="form-control" id="codigoSeguridad" placeholder="CVC" />
+				 <input type="text" class="form-control" id="codigoSeguridad" placeholder="CVC" required minlength="3" maxlength="3" pattern="[0-9]{3}"/>
 			  </div>
 			</div>
 				<div class="form-row">
@@ -112,7 +111,7 @@
           </div>
 			<div class="form-group">
 			  <label for="numero">Número</label>
-			  <input type="text" class="form-control" id="numero" placeholder="" required>
+			  <input type="text" class="form-control" id="numero" placeholder="" required minlength="9" maxlength="9" pattern="[0-9]{9}">
 			</div>
 			</div>
 
@@ -122,5 +121,18 @@
         </div>
       </main>
     </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            location.href = "boleta.html";
+        });
+      });
+
+      
+  </script>
   </body>
 </html>

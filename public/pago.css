@@ -8,7 +8,18 @@ body {
   align-items: center;
   background-color: #f5f5f5;
 }
-
+.mbox {
+    display: flex;
+    background-color: #F5EBEB;
+    border-radius: 50px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 87%;
+    width: 95%;
+    margin-bottom: 50px;
+    align-items: center;
+}
 .form-signin {
   max-width: 750px;
   padding: 15px;
@@ -23,36 +34,7 @@ form {
   justify-content: center;
   align-items: center;
 }
-#recuadro {
-  border: 1px solid #ccc;
-  padding: 10px;
-  overflow: hidden; /* evita que los elementos se salgan del contenedor */
-}
 
-#imagen {
-  float: left; /* imagen flotante a la izquierda */
-
-  width: 30%; /* ajusta el ancho de la imagen a la mitad del contenedor */
-  margin-right: 10px; /* añade un espacio entre la imagen y el contenido */
-}
-
-#contenido {
-  margin-left: 60%; /* desplaza el contenido a la derecha */
-}
-
-.container {
-  width: 100%;
-  overflow: hidden; /* para que el contenedor tenga en cuenta la altura de la imagen */
-}
-
-#persona{
-  float: left; /* alinear imagen a la izquierda */
-  margin-right: 20px; /* margen a la derecha de la imagen */
-}
-
-.texto {
-  margin-left: 20px; /* margen a la izquierda del texto */
-}
 
 * {
   box-sizing: border-box;
@@ -78,27 +60,6 @@ form {
     
 }
 
-.outer-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-
-.left-box {
-  width: 50%;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid black;
-    padding: 15px;
-    border-radius: 8px;
-  margin-right: 50px;
-}
-
-.right-box {
-  width: 50%;
-  margin-left: 40px;
-}
 
 .mnavbar {
     background-color: #F5EBEB;
@@ -113,23 +74,12 @@ form {
 }
 
 
-.mbox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #F5EBEB;
-  border-radius: 50px;
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  height: 87%;
-  width: 95%;
-  margin-bottom: 50px;
-}
 
 
 .form-group input {
   margin-bottom: 15px;
+  margin-left: 60px;
+  margin-right: 35px;
   padding: 10px;
   border-radius: 8px;
   border-style: solid;
@@ -139,6 +89,7 @@ form {
 
 .form-group select {
   margin-bottom: 15px;
+  margin-left: 0px;
   padding: 10px;
   border-radius: 8px;
   border-style: solid;
@@ -162,7 +113,28 @@ label, input {
 .form-row .form-group {
   width: 48%;
 }
+.outer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
+.left-box {
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+    padding: 15px;
+    border-radius: 8px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.right-box {
+  width: 50%;
+  margin-left: 40px;
+}
 
 .user-ident {
     display: flex;
