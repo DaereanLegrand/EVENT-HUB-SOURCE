@@ -99,9 +99,13 @@ form {
   width: 50%;
   margin-left: 40px;
 }
+
 .mnavbar {
     background-color: #F5EBEB;
     margin-bottom: 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .navbar-brand {
@@ -157,6 +161,24 @@ label, input {
 
 .form-row .form-group {
   width: 48%;
+}
+
+
+.user-ident {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.user-ident-text {
+    display: block;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.user-image {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
