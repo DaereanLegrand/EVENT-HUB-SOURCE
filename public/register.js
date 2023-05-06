@@ -1,5 +1,10 @@
-function samepass(event) {
-  event.preventDefault();
+window.addEventListener("DOMContentLoaded", function() {
+    const bfregister = document.getElementById("submit-bt");
+    bfregister.addEventListener("click", samepass);
+})
+
+
+function samepass() {
   var pass1 = document.getElementById("upass").value;
   var pass2 = document.getElementById("upassconf").value;
 
@@ -22,9 +27,11 @@ function samepass(event) {
       }) 
       .then(response => response.json())
         .then(data => {
-            document.getElementById("show-error").innerText = data[0];
+            console.log("AAAA");
+            document.getElementById("show-error").style("color: green;");
+            document.getElementById("show-error").innerText = "Usted se registro correctamente.";
         })
+      return false;
   }
 
-  document.getElementById("form-register").submit();
 }
