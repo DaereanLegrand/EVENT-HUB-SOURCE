@@ -65,6 +65,12 @@ form {
     margin-right: 5px;
 }
 
+.row{
+	display:flex;
+	align-items:center;
+	justify-conten:center;
+}
+
 #imagen {
   float: left; 
 
@@ -83,7 +89,7 @@ form {
 * {
   box-sizing: border-box;
 }
-.form-signin .form-floating {
+.cont-signin .cont-floating {
   margin-top: 15px;
   margin-bottom: 10px;
   z-index: 2;
@@ -101,6 +107,8 @@ form {
     margin-top: 45px;
     margin-left: 10px;
     margin-right: 10px;
+    width : 60%;
+    max-width : 60%;
     
 }
 
@@ -108,10 +116,18 @@ form {
   max-width: 1200px;
   margin: 0 auto;
 }
+#contenido {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  margin-left: 40px;
+}
 
 
-
-.form-group {
+.cont-group {
   display: flex;
   flex-direction: column;
 }
@@ -119,12 +135,12 @@ label, input {
   display: inline-block;
   margin: 0 10px;
 }
-.form-row {
+.cont-row {
   display: flex;
   
 }
 
-.form-row .form-group {
+.cont-row .cont-group {
   width: 48%;
 }
 
