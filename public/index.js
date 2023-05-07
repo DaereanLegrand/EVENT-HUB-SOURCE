@@ -1,17 +1,6 @@
-window.addEventListener("DOMContentLoaded", function() {
-    const bflogin = document.getElementById("submit-bt");
-    bflogin.addEventListener("click", validateCredentials);
-})
-
-
-function validateCredentials(event) {
-    event.preventDefault();
+function validateCredentials() {
     var uname = document.getElementById("floatingInput").value;
     var upass = document.getElementById("floatingPassword").value;
-
-    //console.log("IN FUNCTION");
-    //console.log(uname);
-    //console.log(upass);
 
     fetch("http://localhost:8080/login", {
         method: "POST",
@@ -22,7 +11,7 @@ function validateCredentials(event) {
     })
     .then(response => response.json())
         .then(data => {
-            if (data[0].count == 1) {
+            if (data[0].count != 0) {
                 document.getElementById("form-signin-true").submit();
             } else {
                 document.getElementById("show-error").innerText = "Error credenciales inválidas.";

@@ -1,11 +1,4 @@
-window.addEventListener("DOMContentLoaded", function() {
-    const bfregister = document.getElementById("submit-bt");
-    bfregister.addEventListener("click", samepass);
-})
-
-
-function samepass(event) {
-  event.preventDefault();
+function samepass() {
   var pass1 = document.getElementById("upass").value;
   var pass2 = document.getElementById("upassconf").value;
 

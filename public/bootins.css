@@ -69,4 +69,9 @@ body {
     margin-bottom: 50px;
 }
 
-
+.preins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

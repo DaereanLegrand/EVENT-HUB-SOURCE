@@ -30,7 +30,7 @@
     </nav>
     <div class="mbox m-auto">
       <main class="form-signin w-100 m-auto m-100">
-        <form id="form-signin-true" action="home.html" onsubmit="validateCredentials(event)">
+        <form id="form-signin-true" action="home.html" onsubmit="validateCredentials()">
           <h1 class="h3 mb-3 fw-bold">Inicio de sesión</h1>
 
           <div class="form-floating">
@@ -38,12 +38,12 @@
               required
               class="form-control"
               id="floatingInput"
-              placeholder="name@example.com"
+              placeholder="usuario"
               minlength="5"
               maxlength="20"
               pattern="[a-zA-Z0-9._\s]+"
             />
-            <label for="floatingInput">Correo electrónico</label>
+            <label for="floatingInput">Nombre de usuario</label>
           </div>
           <div class="form-floating">
             <input
