@@ -1,4 +1,5 @@
-function validateCredentials() {
+function validateCredentials(event) {
+    event.preventDefault();
     var uname = document.getElementById("floatingInput").value;
     var upass = document.getElementById("floatingPassword").value;
 
@@ -16,6 +17,6 @@ function validateCredentials() {
             } else {
                 document.getElementById("show-error").innerText = "Error credenciales inválidas.";
                 return false;
-            }
+                }
         })
 }
