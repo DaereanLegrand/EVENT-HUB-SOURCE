@@ -1,0 +1,85 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    
+    <title>editarEvento</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="editar.css" rel="stylesheet" />
+    
+  </head>
+
+  <body>
+	<nav class="navbar mnavbar">
+      <a class="navbar-brand" href="#">
+        <img
+          src="images/logo.png"
+          width="96"
+          height="50"
+          class="d-inline-block align-top"
+          alt=""
+        />
+      </a>
+      <div class="user-ident my-2 my-lg-0">
+        <img
+          src="images/user.png"
+          width="50"
+          height="50"
+          class="user-image d-inline-block align-top"
+          alt=""
+        />
+        <div class="user-ident-text">
+          <span>Bienvenido</span>
+          <br />
+          <span>Usuario</span>
+        </div>
+      </div>
+      </div>
+    </nav>
+    
+
+    <div class="mbox m-auto" id="recuadro">
+
+        <h1>Edita los detalles de tu Ambiente</h1>
+
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre"><br><br>
+    
+            <label for="ubicacion">Ubicacion:</label>
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese el lugar"><br><br>
+    
+            <div>
+                <label for="aforo">Aforo:</label>
+                <input type="number" id="aforo" name="aforo" placeholder="Ingrese el aforo">
+                
+                <label for="tamaño">Tamaño:</label>
+                <input type="number" id="tamaño" name="tamaño" placeholder="Ingrese el tamaño">
+            </div><br>
+    
+            <label for="tipo_ambiente">Tipo de ambiente:</label>
+            <input type="text" id="tipo_ambiente" name="tipo_ambiente" placeholder="Ingrese el tipo"><br><br>
+    
+            <label for="descripcion">Descripción:</label><br>
+            <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Ingrese una descripción del evento"></textarea><br><br>
+    
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+    
+    
+  </script>
+  </body>
+</html>
