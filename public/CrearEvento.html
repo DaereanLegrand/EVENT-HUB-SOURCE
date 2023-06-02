@@ -31,14 +31,14 @@
     <div class="mbox m-auto">
       <main class="form-signin w-100 m-auto m-100">
         <h1 class="h3 mb-3 fw-bold">Crear los detalles de tu nuevo evento:</h1>
-        <form>
+    	<form id="crearEventoForm" onsubmit="return sameevent()">
 		<div class="my-space"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<label>Titulo del evento</label>
 			</div>
 			<div class="col-md-9">
-              			<input class="form-control"/>
+              			<input id="nombre" class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -47,7 +47,7 @@
 				<label>Lugar del evento</label>
 			</div>
 			<div class="col-md-9">
-				<input class="form-control"/>
+				<input id="lugar"class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -56,7 +56,7 @@
 				<label>Dirección</label>
 			</div>
 			<div class="col-md-9">
-				<input class="form-control"/>
+				<input id="direccion" class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -100,15 +100,11 @@
       				<label for="description" class="form-label">Descripción del evento</label>
 			</div>
 			<div class="col-md-9 mb-3">
-      				<textarea id="description" class="form-control" rows="4" required></textarea>
+      				<textarea id="descripcion" class="form-control" rows="4" required></textarea>
     			</div>
   		</div>
 		<div class="my-space"></div>
-		<div class="row">
-    			<div class="submit-btn-div">
-      				<button type="button" class="w-50 btn btn-lg" id="submit-bt">Continuar</button>
-    			</div>
-  		</div>
+      		<button type="submit" class="w-50 btn btn-lg" id="submit-bt">Continuar</button>
 
         </form>
       </main>
