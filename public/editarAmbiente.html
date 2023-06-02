@@ -30,15 +30,15 @@
     </nav>
     <div class="mbox m-auto">
       <main class="form-signin w-100 m-auto m-100">
-        <h1 class="h3 mb-3 fw-bold">Edita los detalles del ambiente:</h1>
-        <form>
+        <h1 class="h3 mb-3 fw-bold">Edita detalles de tu ambiente:</h1>
+        <form id="crearAmbienteForm" onsubmit="return sameambient()">
 		<div class="my-space"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<label class="form-label">Nombre del ambiente</label>
 			</div>
 			<div class="col-md-9">
-				<input class="form-control"/>
+				<input id="nombre" class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -47,7 +47,7 @@
 				<label class="form-label">Ubicación</label>
 			</div>
 			<div class="col-md-9">
-				<input class="form-control"/>
+				<input id="ubicacion" class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -70,7 +70,7 @@
                         	<label class="form-label">Tipo de ambiente</label>
 			</div>
 			<div class="col-md-9">
-				<input class="form-control"/>
+				<input id="tipo" class="form-control"/>
 			</div>
                 </div>
 		<div class="my-space"></div>
@@ -85,7 +85,7 @@
 		<div class="my-space"></div>
 		<div class="row">
     			<div class="submit-btn-div">
-      				<button type="button" class="w-50 btn btn-lg" id="submit-bt">Guardar</button>
+      				<button type="submit" class="w-50 btn btn-lg" id="submit-bt">Continuar</button>
     			</div>
   		</div>
 
