@@ -32,3 +32,18 @@ function AdaptarEvento() {
         })
       document.getElementById("form-adapt").submit();
 }
+
+function SeleccionarComites() {
+    fetch("http://localhost:8080/SeleccionarComites")
+    .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            var select = document.getElementById("select");
+            for (let i in data) {
+                let opt = document.createElement("option");
+                opt.value = data[i].id_comite;
+                opt.innerHTML = data[i].comite;
+                select.appendChild(opt);
+            }
+        })
+}

@@ -16,7 +16,7 @@
         ></script>
         <title>Adaptar Evento</title>
     </head>
-    <body>
+    <body onload="SeleccionarComites()">
         <nav class="navbar mnavbar">
             <a class="navbar-brand" href="#">
                 <img
@@ -40,7 +40,7 @@
                             <label>Titulo del evento</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="titulo" class="form-control" />
+                            <input id="nombre" class="form-control" />
                         </div>
                     </div>
                     <div class="my-space"></div>
@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label for="start-date" class="form-label"
-                                >Fecha de comienzo:</label
+                                >Fecha de inicio:</label
                             >
                             <input
                                 type="date"
@@ -88,7 +88,7 @@
 
                         <div class="col-md-3 mb-3">
                             <label for="start-time" class="form-label"
-                                >Hora de comienzo:</label
+                                >Hora de inicio:</label
                             >
                             <input
                                 type="time"
