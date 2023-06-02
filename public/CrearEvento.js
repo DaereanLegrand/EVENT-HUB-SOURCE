@@ -5,7 +5,7 @@ function sameevent() {
       body : JSON.stringify({
         nombre : document.getElementById("nombre").value,
         lugar : document.getElementById("lugar").value,
-        direccion : document.getElementById("direccion").value,
+        categoria : document.getElementById("categoria").value,
         startdate : document.getElementById("start-date").value,
         enddate : document.getElementById("end-date").value,
         starttime : document.getElementById("start-time").value,
