@@ -20,7 +20,7 @@
     <nav class="navbar mnavbar">
       <a class="navbar-brand" href="#">
         <img
-          src="/images/logo.png"
+          src="images/logo.png"
           width="96"
           height="50"
           class="d-inline-block align-top"
@@ -30,15 +30,15 @@
     </nav>
     <div class="mbox m-auto">
       <main class="form-signin w-100 m-auto m-100">
-        <h1 class="h3 mb-3 fw-bold">Crear los detalles de tu nuevo evento:</h1>
-    	<form id="crearEventoForm" onsubmit="return sameevent()">
+        <h1 class="h3 mb-3 fw-bold">Edita los detalles de tu evento:</h1>
+        <form>
 		<div class="my-space"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<label>Titulo del evento</label>
 			</div>
 			<div class="col-md-9">
-              			<input id="nombre" class="form-control"/>
+              			<input class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -47,7 +47,7 @@
 				<label>Lugar del evento</label>
 			</div>
 			<div class="col-md-9">
-				<input id="lugar"class="form-control"/>
+				<input class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
@@ -56,26 +56,26 @@
 				<label>Dirección</label>
 			</div>
 			<div class="col-md-9">
-				<input id="direccion" class="form-control"/>
+				<input class="form-control"/>
 			</div>
 		</div>
 		<div class="my-space"></div>
 		<div class="row">
     			<div class="col-md-3 mb-3">
-      				<label for="start-date" class="form-label">Fecha de inicio</label>
+      				<label for="start-date" class="form-label">Fecha de Inicio:</label>
       				<input type="date" id="start-date" class="form-control" required>
     			</div>
 			<div class="col-md-3 mb-3">
-                                <label for="end-date" class="form-label">Fecha de finalización</label>
+                                <label for="end-date" class="form-label">Fecha de cierre:</label>
                                 <input type="date" id="end-date" class="form-control" required>
                         </div>
 
     			<div class="col-md-3 mb-3">
-				<label for="start-time" class="form-label">Hora de inicio</label>
+      				<label for="start-time" class="form-label">Hora de inicio:</label>
       				<input type="time" id="start-time" class="form-control" required>
     			</div>
 			<div class="col-md-3 mb-3">
-                                <label for="end-time" class="form-label">Hora de finalización</label>
+                                <label for="end-time" class="form-label">Hora de finalización:</label>
                                 <input type="time" id="end-time" class="form-control" required>
                         </div>
 		</div>
@@ -91,7 +91,7 @@
       				<label for="number-selector" class="form-label">Número de actividades:</label>
 			</div>
 			<div class="col-md-3 mb-3">
-      				<input type="number" id="number-selector" class="form-control" required min="1">
+      				<input type="number" id="number-selector" class="form-control" required>
     			</div>
 		</div>
 		<div class="my-space"></div>
@@ -100,11 +100,15 @@
       				<label for="description" class="form-label">Descripción del evento</label>
 			</div>
 			<div class="col-md-9 mb-3">
-      				<textarea id="descripcion" class="form-control" rows="4" required></textarea>
+      				<textarea id="description" class="form-control" rows="4" required></textarea>
     			</div>
   		</div>
 		<div class="my-space"></div>
-      		<button type="submit" class="w-50 btn btn-lg" id="submit-bt">Continuar</button>
+		<div class="row">
+    			<div class="submit-btn-div">
+      				<button type="button" class="w-50 btn btn-lg" id="submit-bt">Continuar</button>
+    			</div>
+  		</div>
 
         </form>
       </main>
