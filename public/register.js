@@ -29,5 +29,4 @@ function samepass() {
         })
       document.getElementById("form-register").submit();
   }
-
 }
