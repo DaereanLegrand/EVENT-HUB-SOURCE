@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (botonadaptarAmbiente) {
     botonadaptarAmbiente.addEventListener(
         'click',
-        function() { window.location.href = "/AdaptarAmbiente.html"; });
+        function() { window.location.href = "/seleccionarAmbientes.html"; });
   }
 });
