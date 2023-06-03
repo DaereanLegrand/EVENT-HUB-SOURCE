@@ -14,14 +14,17 @@ function sameevent() {
     })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+            sessionStorage.setItem('id_evento', data.id_evento);
+            /*
           if (data[0].success == true) {
             document.getElementById("show-error").style("color: green;");
             document.getElementById("show-error").innerText = "Evento Creado";
             window.location.href = "/Actividades.html";
           }
+            */
         });
-    document.getElementById("crearEventoForm")
-        .addEventListener("submit", sameevent);
+    //document.getElementById("crearEventoForm").addEventListener("submit", sameevent);
 
   } catch (error) {
     console.error(error);
