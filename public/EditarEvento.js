@@ -32,14 +32,14 @@ function cargarEvento() {
   var data = JSON.parse(sessionStorage.getItem('evento'));
   console.log(data);
 
-  document.getElementById("titulo").value = data.nombre + "1";
-  document.getElementById("lugar").value = data.ubicacion;
-  document.getElementById("categoria").value = data.aforo;
-  document.getElementById("start-date").value = data.tamaño;
-  document.getElementById("end-date").value = data.tipo;
-  document.getElementById("start-time").value = data.descripcion;
-  document.getElementById("end-time").value = data.descripcion;
+  document.getElementById("nombre").value = data.nombre;
+  document.getElementById("lugar").value = data.lugar;
+  document.getElementById("categoria").value = data.categoria;
+  document.getElementById("start-date").value = data.start-date;
+  document.getElementById("end-date").value = data.end-date;
+  document.getElementById("start-time").value = data.start-time;
+  document.getElementById("end-time").value = data.end-time;
   document.getElementById("description").value = data.descripcion;
-  document.getElementById("select").value = data.descripcion;
-  document.getElementById("image-upload").value = data.descripcion;
+  document.getElementById("select").value = data.select;
+  document.getElementById("image-upload").value = data.image;
 }
