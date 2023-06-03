@@ -1,8 +1,7 @@
 function crearActividad() {
 
-    var data =  JSON.parse(sessionStorage.getItem('evento'));
     console.log(data);
-    var evento_id = data.id_evento;
+    var evento_id = JSON.parse(sessionStorage.getItem('id_evento'));
     var title = document.getElementById("nombre").value;
     var fcomienzo = document.getElementById("start-date").value;
     var ffin = document.getElementById("end-date").value;
@@ -26,12 +25,9 @@ function crearActividad() {
     })
     .then(response => response.json())
         .then(data => {
-
-            var mevento = document.createElement("div");
             var buttonContinuar = document.createElement("button");
 
-            mevento.className = "mevento";
-            buttonContinuar.className = "btn2";
+            buttonContinuar.className = "a w-50 btn btn-lg";
             buttonContinuar.innerText = "Actividades";
             buttonContinuar.addEventListener("click", function () {
             RedirectAmbientes(evento);
@@ -44,7 +40,8 @@ function crearActividad() {
 
 
 function RedirectAmbientes(evento) {
-    sessionStorage.setItem("idActividad", JSON.stringify(evento));
-    location.href = "/editarEvento.html";
+    console.log(data.id_actividad)
+    sessionStorage.setItem("id_actividad", data.id_actividad);
+    location.href = "/Ambientes.html";
   }
   
