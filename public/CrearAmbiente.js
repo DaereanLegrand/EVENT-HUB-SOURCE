@@ -1,6 +1,6 @@
 function sameambient() {
   try {
-      console.log("CHECK");
+    console.log("CHECK");
     fetch("http://localhost:8080/crearAmbiente", {
       method : "POST",
       body : JSON.stringify({
