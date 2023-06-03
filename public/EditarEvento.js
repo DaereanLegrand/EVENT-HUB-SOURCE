@@ -34,12 +34,9 @@ function cargarEvento() {
 
   document.getElementById("nombre").value = data.nombre;
   document.getElementById("lugar").value = data.lugar;
-  document.getElementById("categoria").value = data.categoria;
-  document.getElementById("start-date").value = data.start-date;
-  document.getElementById("end-date").value = data.end-date;
-  document.getElementById("start-time").value = data.start-time;
-  document.getElementById("end-time").value = data.end-time;
+  document.getElementById("start-date").value = data.fcomienzo;
+  document.getElementById("end-date").value = data.ffin;
+  document.getElementById("start-time").value = data.hcomienzo;
+  document.getElementById("end-date").value = data.hfin;
   document.getElementById("description").value = data.descripcion;
-  document.getElementById("select").value = data.select;
-  document.getElementById("image-upload").value = data.image;
 }
