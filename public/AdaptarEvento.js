@@ -10,7 +10,7 @@ function cargarDatosEvento() {
     document.getElementById("end-date").value = data.ffin;
     document.getElementById("start-time").value = data.hcomienzo;
     document.getElementById("end-date").value = data.hfin;
-    document.getElementById("description").value = data.descripcion;
+    document.getElementById("descripcion").value = data.descripcion;
 }
 
 function SeleccionarComites() {
