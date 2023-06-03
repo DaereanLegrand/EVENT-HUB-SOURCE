@@ -73,5 +73,18 @@ function RedirectAdaptar(ambiente) {
 }
 
 function EliminarAmbiente(id_ambiente){
-
+  fetch("http://localhost:8080/EliminarAmbiente", {
+    method: "POST",
+    
+    body: JSON.stringify({ id : id_ambiente }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("El evento se ha eliminado correctamente:", data);
+      
+    })
+    .catch(error => {
+      console.error("Error al eliminar el evento:", error);
+    });
+    location.reload();
 } 

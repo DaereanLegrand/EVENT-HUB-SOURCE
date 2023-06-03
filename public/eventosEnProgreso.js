@@ -101,7 +101,21 @@ function RedirectAdaptar(evento) {
   sessionStorage.setItem("evento", JSON.stringify(evento));
   location.href = "/AdaptarEvento.html";
 }
+function EliminarEvento(id_evento) {
+  fetch("http://localhost:8080/EliminarEvento", {
+    method: "POST",
+    
+    body: JSON.stringify({ id : id_evento }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("El evento se ha eliminado correctamente:", data);
+      
+    })
+    .catch(error => {
+      console.error("Error al eliminar el evento:", error);
+    });
+    location.reload();
+}
 
-function EliminarEvento(id_ambiente){
 
-} 
