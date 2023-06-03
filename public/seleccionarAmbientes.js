@@ -30,22 +30,22 @@ function obtenerTodosLosAmbientes() {
         h1.innerText = nombre;
 
         buttonModificar.className = "btn2";
+        buttonModificar.innerText = "Modificar";
         buttonModificar.addEventListener("click", function () {
           RedirectModificar(ambiente);
         });
-        buttonModificar.innerText = "Modificar";
 
         buttonAdaptar.className = "btn2";
+        buttonAdaptar.innerText = "Adaptar";
         buttonAdaptar.addEventListener("click", function () {
           RedirectAdaptar(ambiente);
         });
-        buttonAdaptar.innerText = "Adaptar";
 
         buttonEliminar.className = "btn2";
-        buttonAdaptar.addEventListener("click", function () {
+        buttonEliminar.innerText = "Eliminar";
+        buttonEliminar.addEventListener("click", function () {
           EliminarAmbiente(id_ambiente);
         });
-        buttonEliminar.innerText = "Eliminar";
 
         mevento.appendChild(img);
         mevento.appendChild(h1);
@@ -69,7 +69,7 @@ function RedirectModificar(ambiente) {
 
 function RedirectAdaptar(ambiente) {
   sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
-  location.href = "/AdaptarEvento.html";
+  location.href = "/AdaptarAmbiente.html";
 }
 
 function EliminarAmbiente(id_ambiente){
