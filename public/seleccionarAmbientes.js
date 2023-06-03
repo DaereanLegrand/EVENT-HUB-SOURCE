@@ -69,7 +69,7 @@ function RedirectModificar(ambiente) {
 
 function RedirectAdaptar(ambiente) {
   sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
-  location.href = "/AdaptarEvento.html";
+  location.href = "/AdaptarAmbiente.html";
 }
 
 function EliminarAmbiente(id_ambiente){
