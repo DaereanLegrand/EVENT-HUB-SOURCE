@@ -10,15 +10,16 @@ function sameevent() {
         starttime : document.getElementById("start-time").value,
         endtime : document.getElementById("end-time").value,
         descripcion : document.getElementById("descripcion").value,
-      })
+      }),
     })
         .then(response => response.json())
         .then(data => {
           if (data[0].success == true) {
             document.getElementById("show-error").style("color: green;");
             document.getElementById("show-error").innerText = "Evento Creado";
+            window.location.href = "/Actividades.html";
           }
-        })
+        });
     document.getElementById("crearEventoForm")
         .addEventListener("submit", sameevent);
 
