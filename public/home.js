@@ -1,7 +1,6 @@
 function userHome() {
   let mbox = document.getElementById("main-box");
-  mbox.innerHTML = 
-        `<div id="events" class="show-event">
+  mbox.innerHTML = `<div id="events" class="show-event">
         <div
           id="events-carousel"
           class="carousel slide events-shower"
@@ -140,5 +139,4 @@ function userHome() {
         </div>
       </div>
       </div>`;
-
 }
