@@ -74,6 +74,13 @@ body {
         margin-bottom: 20px;
 }
 
+.btn-img {
+  width: 300px; 
+  height: 300px; 
+  display: block; 
+  margin: 0 auto; 
+}
+
 
 
 #show-error {
