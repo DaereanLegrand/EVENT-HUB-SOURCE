@@ -1,36 +1,16 @@
-function AdaptarEvento() {
-    var title = document.getElementById("titulo").value;
-    var lugar = document.getElementById("lugar").value;
-    var categoria = document.getElementById("categoria").value;
-    var fcomienzo = document.getElementById("start-date").value;
-    var ffin = document.getElementById("end-date").value;
-    var hcomienzo = document.getElementById("start-time").value;
-    var hfin = document.getElementById("end-time").value;
-    var description = document.getElementById("description").value;
-    var comite = document.getElementById("select").value;
-    var image = document.getElementById("image-upload").value;
+function cargarDatosEvento() {
+    SeleccionarComites();
 
-    fetch("http://localhost:8080/AdaptarEvento", {
-        method: "POST",
-        body: JSON.stringify({
-            nombre: title,
-            categoria: categoria,
-            fechaComienzo: fcomienzo,
-            fechaFin: ffin,
-            horaComienzo: hcomienzo,
-            horaFin: hfin,
-            lugar: lugar,
-            descripcion: description,
-            comite: comite,
-            image: image,
-        })
-    })
-    .then(response => response.json())
-        .then(data => {
-            if (data[0].success == true) {
-            }
-        })
-      document.getElementById("form-adapt").submit();
+    var data =  JSON.parse(sessionStorage.getItem('evento'));
+    console.log(data);
+
+    document.getElementById("nombre").value = data.nombre;
+    document.getElementById("lugar").value = data.lugar;
+    document.getElementById("start-date").value = data.fcomienzo;
+    document.getElementById("end-date").value = data.ffin;
+    document.getElementById("start-time").value = data.hcomienzo;
+    document.getElementById("end-date").value = data.hfin;
+    document.getElementById("description").value = data.descripcion;
 }
 
 function SeleccionarComites() {

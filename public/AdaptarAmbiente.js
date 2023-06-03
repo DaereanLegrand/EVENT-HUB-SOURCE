@@ -1,17 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Obtener el parámetro "ambiente" de la URL
-    const params = new URLSearchParams(window.location.search);
-    const ambienteJson = params.get("ambiente");
-  
-    if (ambienteJson) {
-      // Convertir el JSON recibido a un objeto JavaScript
-      const ambiente = JSON.parse(ambienteJson);
-  
-      // Hacer algo con los datos del ambiente
-      console.log("Datos del ambiente recibidos:");
-      console.log(ambiente);
-    } else {
-      console.error("No se encontraron datos del ambiente");
-    }
-  });
-  
+function cargarAmbiente() {
+    var data = JSON.parse(sessionStorage.getItem('ambiente'));
+    console.log(data);
+
+    document.getElementById("nombre").value = data.nombre + "1";
+    document.getElementById("ubicacion").value = data.ubicacion;
+    document.getElementById("aforo-selector").value = data.aforo;
+    document.getElementById("tamaño-selector").value = data.tamaño;
+    document.getElementById("tipo").value = data.tipo;
+    document.getElementById("description").value = data.descripcion;
+}
