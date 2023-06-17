@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     
-    <title>inscripcionGuardada</title>
+    <title>preinscripcionGuardada</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="inscripcionGuardada.css" rel="stylesheet" />
     
@@ -55,19 +55,23 @@
 	
       <main class="form-signin w-100 m-auto m-100">
 		<div class="white-box">
-		  <h3>Su inscripción fue correctamente realizada.</h3>
+		  <h3>Pre-inscripción exitosa.</h3>
 		</div>
 			<div id="contenido">
 			<div class="form-row">
-			<button class="w-100 btn btn-lg" id="imprimirQr-bt" type="submit"><h3>Imprimir código QR</h3></button>
-          <button class="w-100 btn btn-ini" id="volverInicio-bt" type="submit" onclick="location.href='/home.html'""><h3>Volver al inicio</h3></button>
+          <button class="w-100 btn btn-ini" id="volverInicio-bt" type="submit" onclick="return sameevent()"><h3>Volver al inicio</h3></button>
            </div>
        </div>
-
+        
       </main>
     </div>
     
-    
+    <script type="text/javascript">
+      const buttons = document.getElementById("volverInicio-bt");
+      buttons.addEventListener('click', () => {
+      location.href = "/home.html";
+  });
   </script>
+  <script src="preinscripcionGuardada.js"></script>
   </body>
 </html>

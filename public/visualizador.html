@@ -32,129 +32,139 @@
     </nav>
   <div class="mbox m-auto">
     <main class="form-signin w-100 m-auto m-100">
-    <div class="row justify-content-center">
-    <h1 style="font-weight: bold; font-size: 50px;">Elige tu Evento</h1>
-      <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-md-2 text-center">
-                <button class="buton btn-primary" id="prev" disabled>
-                  <i class="bi bi-arrow-left"></i>
-                </button>
-              </div>
-              <div class="col-md-8">
-                <div class="box" id="box1">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Congreso de Videojuegos 2023</h2>
-                  <div class="row align-items-center">  
-                    <img src="images/evento1.png" alt="Box 1 Image" width="300" height="200">
-                  <p style="text-align: justify;">Este congreso de videojuegos en la Universidad Católica San Pablo en 2023 ofrece una experiencia completa para los amantes de los juegos electrónicos, con charlas y conferencias de expertos en la industria, torneos emocionantes, exhibiciones de nuevos lanzamientos, oportunidades de networking con profesionales del campo y mucho más.</p>
-                  <p style="text-align: center;">Precio: $200.00</p>
-                  <div style="display: flex; justify-content: center; align-items: center;">
-                    <button class="btni btn-primary">Inscripcion</button>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <button class="btnp btn-primary">Pre-Inscripcion</button>
-                  </div>
-                  </div>
+      <div class="row justify-content-center">
+        <h1 style="font-weight: bold; font-size: 50px;">Elige tu Evento</h1>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                  <button class="buton btn-primary" id="prev" disabled>
+                    <i class="bi bi-arrow-left"></i>
+                  </button>
                 </div>
-                <div class="box" id="box2">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Conferencias IA</h2>
-                  <div class="row align-items-center">
-                      <img src="images/evento2.png" alt="Box 2 Image" width="300" height="200">
-                      <p style="text-align: justify;">Explore el potencial de la IA en la conferencia de la Universidad Católica San Pablo en 2023. Únase a líderes de la industria y expertos en el campo para discutir las últimas tendencias y tecnologías en IA, ver demostraciones en vivo y hacer conexiones valiosas en la industria.</p>
-                      <p style="text-align: center;">Precio: $120.00</p>
-                      <div style="display: flex; justify-content: center; align-items: center;">
-                    <button class="btni btn-primary">Inscripcion</button>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <button class="btnp btn-primary">Pre-Inscripcion</button>
-                  </div>
-
-                  </div>
+                <div class="col-md-8">
+                  <ul id="eventos-list"></ul>
                 </div>
-                <div class="box" id="box3">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Exposición Computación Gráfica</h2>
-                  <div class="row align-items-center">
-                      <img src="images/evento3.png" alt="Box 3 Image" width="300" height="200">
-                      <p style="text-align: justify;">Únase a expertos en gráficos por computadora en nuestra conferencia de la Universidad Católica San Pablo en 2023. Descubra las últimas tendencias y técnicas creativas en talleres y demostraciones en vivo, y conéctese con otros profesionales de la industria.</p>
-                      <p style="text-align: center;">Precio: $225.00</p>
-                      <div style="display: flex; justify-content: center; align-items: center;">
-                    <button class="btni btn-primary">Inscripcion</button>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <button class="btnp btn-primary">Pre-Inscripcion</button>
-                  </div>
-
-                  </div>
+                <div class="col-md-2 text-center">
+                  <button class="buton btn-primary" id="next">
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
                 </div>
-              </div>
-              <div class="col-md-2 text-center">
-                <button class="buton btn-primary" id="next">
-                  <i class="bi bi-arrow-right"></i>
-                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript">
-      const buttons = document.querySelectorAll('.btni');
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            location.href = "bootins.html";
-        });
-      });
-      
-      const buttonsp = document.querySelectorAll('.btnp');
-      buttonsp.forEach(buttonp => {
-        buttonp.addEventListener('click', () => {
-            location.href = "preins.html";
-        });
-      });
-      
-  </script>
+    function obtenerTodosLosEventos() {
+      fetch("http://localhost:8080/eventosEnProgreso", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          const eventos = data;
+          const listaEventos = document.getElementById("eventos-list");
 
-  <script>
-    const boxes = document.querySelectorAll('.box');
-    let currentBoxIndex = 0;
+          eventos.forEach(evento => {
+            const { id_evento, nombre,descripcion ,imagen } = evento;
+            const listItem = document.createElement("li");
+
+            var mevento = document.createElement("div");
+            var img = document.createElement("img");
+            var h4 = document.createElement("h1");
+            var descrip = document.createElement("p")
+            var buttonInscribirse = document.createElement("button");
+            var buttonPreinscribirse = document.createElement("button");
+
+            mevento.className = "mevento";
+            img.className = "img-evento";
+            img.src = "/images/fiesta.png";
+
+            h4.className = "name-evento";
+            h4.innerText = nombre;
+
+            descrip.className = "descripcion";
+            descrip.innerText = descripcion;
+
+            buttonInscribirse.className = "btn btn-primary";
+            buttonInscribirse.innerText = "Inscribirse";
+            buttonInscribirse.addEventListener("click", function () {
+              Inscribirse(evento);
+            });
+
+            buttonPreinscribirse.className = "btn btn-primary";
+            buttonPreinscribirse.innerText = "Preinscribirse";
+            buttonPreinscribirse.addEventListener("click", function () {
+              Preinscribirse(evento);
+            });
+
+            mevento.appendChild(h4);
+            mevento.appendChild(img);
+            mevento.appendChild(descrip)
+            mevento.appendChild(buttonInscribirse);
+            mevento.appendChild(buttonPreinscribirse);
+
+            listItem.appendChild(mevento);
+            listaEventos.appendChild(listItem);
+          });
+
+          showEvent(0); // Mostrar el primer evento al cargar
+        })
+        .catch(error => {
+          console.error("Error al obtener los eventos:", error);
+        });
+    }
+
+    function Inscribirse(evento) {
+      sessionStorage.setItem("evento", JSON.stringify(evento));
+      location.href = "/bootins.html";
+    }
+
+    function Preinscribirse(evento) {
+      const id_evento = evento.id_evento;
+      localStorage.setItem("evento", id_evento);
+
+      location.href = "/preins.html";
+    }
+
+    let currentIndex = 0;
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    function showEvent(index) {
+      const eventos = document.querySelectorAll("#eventos-list > li");
+      eventos.forEach((evento, i) => {
+        evento.style.display = i === index ? "block" : "none";
+      });
+
+      currentIndex = index;
+      updateButtons();
+    }
 
     function updateButtons() {
-      if (currentBoxIndex === 0) {
-        document.querySelector('#prev').disabled = true;
-      } else {
-        document.querySelector('#prev').disabled = false;
-      }
-
-      if (currentBoxIndex === boxes.length - 1) {
-        document.querySelector('#next').disabled = true;
-      } else {
-        document.querySelector('#next').disabled = false;
-      }
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === eventos.length - 1;
     }
 
-    function showBox(index) {
-      boxes.forEach(box => box.style.display = 'none');
-      boxes[index].style.display = 'block';
-    }
-
-    document.querySelector('#prev').addEventListener('click', () => {
-      currentBoxIndex--;
-      showBox(currentBoxIndex);
-      updateButtons();
+    prevButton.addEventListener("click", function () {
+      currentIndex--;
+      showEvent(currentIndex);
     });
 
-    document.querySelector('#next').addEventListener('click', () => {
-      currentBoxIndex++;
-      showBox(currentBoxIndex);
-      updateButtons();
+    nextButton.addEventListener("click", function () {
+      currentIndex++;
+      showEvent(currentIndex);
     });
 
-    showBox(currentBoxIndex);
-    updateButtons();
+    obtenerTodosLosEventos();
   </script>
 </body>
 </html>
-
