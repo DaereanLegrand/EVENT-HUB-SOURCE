@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var botonAmbiente = document.getElementById('botonAmbiente');
   if (botonEventos) {
     botonEventos.addEventListener(
-        'click', function() { window.location.href = "/Eventos.html"; });
+        'click', function() { window.location.href = "/eventosEnProgreso.html"; });
   }
   if (botonPreInscripcion) {
     botonPreInscripcion.addEventListener(
-        'click', function() { window.location.href = "/preins.html"; });
+        'click', function() { window.location.href = "/visualizador.html"; });
   }
   if (botonAmbiente) {
     botonAmbiente.addEventListener(

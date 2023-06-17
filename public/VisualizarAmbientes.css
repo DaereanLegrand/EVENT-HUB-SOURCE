@@ -194,8 +194,8 @@ body {
     background-color: #d4c0c0 !important;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    padding-right: 3%;
-    padding-left: 3%;
+    padding-right: 10%;
+    padding-left: 10%;
     
     margin-top: 25px;
     margin-bottom: 25px;
@@ -239,8 +239,8 @@ body {
     margin-bottom: 30px;
     height: 3em;
     padding: 5px;
-    margin-left: 7x;
-    margin-right: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .eventoInfo{

@@ -1,8 +1,11 @@
 function sameevent() {
+  var data = JSON.parse(sessionStorage.getItem('evento'));
   try {
+
     fetch("http://localhost:8080/editarEvento", {
       method : "POST",
       body : JSON.stringify({
+        id_evento : data.id_evento,
         nombre : document.getElementById("nombre").value,
         lugar : document.getElementById("lugar").value,
         startdate : document.getElementById("start-date").value,

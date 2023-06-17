@@ -1,9 +1,11 @@
 function sameambient() {
   try {
-    console.log("CHECK");
+    var data = JSON.parse(sessionStorage.getItem('ambiente'));
+    console.log(data.id_evento);
     fetch("http://localhost:8080/crearAmbiente", {
       method : "POST",
       body : JSON.stringify({
+        id_evento : data.id_evento,//ARREGLAR
         nombre : document.getElementById("nombre").value,
         ubicacion : document.getElementById("ubicacion").value,
         aforo : document.getElementById("aforo-selector").value,

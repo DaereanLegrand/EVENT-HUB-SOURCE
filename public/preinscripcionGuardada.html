@@ -59,7 +59,7 @@
 		</div>
 			<div id="contenido">
 			<div class="form-row">
-          <button class="w-100 btn btn-ini" id="volverInicio-bt" type="submit" onclick="location.href='/home.html'""><h3>Volver al inicio</h3></button>
+        <button class="w-100 btn btn-ini" id="volverInicio-bt" type="submit" onclick="return sameevent()"><h3>Volver al inicio</h3></button>
            </div>
        </div>
         
@@ -68,9 +68,12 @@
     
     <script type="text/javascript">
       const buttons = document.getElementById("volverInicio-bt");
-      button.addEventListener('click', () => {
-      location.href = "home.html";
+      buttons.addEventListener('click', () => {
+      location.href = "/visualizador.html";
   });
+  
   </script>
+        <script src="preinscripcionGuardada.js"></script>
+
   </body>
 </html>
