@@ -38,48 +38,22 @@
         <div class="card mb-3">
           <div class="card-body">
             <div class="row align-items-center">
-              <div class="col-md-2 text-center">
-                <button class="buton btn-primary" id="prev" disabled>
-                  <i class="bi bi-arrow-left"></i>
-                </button>
-              </div>
-              <div class="col-md-8">
-                <div class="box" id="box1">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Paquete 1</h2>
-                  <div class="row align-items-center">  
-                    <img src="images/Paquete1.png" alt="Box 1 Image" width="300" height="200">
-                  <p style="text-align: justify;">Este paquete incluye todo lo necesario para una boda inolvidable, desde la decoración del lugar hasta el banquete, el servicio de fotografía y video, la música en vivo, la coordinación de la ceremonia y la recepción, y mucho más.</p>
-                  <p style="text-align: center;">Precio: $200.00</p>
-                  <button class="btn btn-primary" onclick="location.href='/preinscripcionGuardada.html'">Elegir</button>
-                
-                  </div>
+                <div class="col-md-2 text-center">
+                    <button class="buton btn-primary" id="prev" disabled>
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
                 </div>
-                <div class="box" id="box2">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Paquete 2</h2>
-                  <div class="row align-items-center">
-                      <img src="images/Paquete2.png" alt="Box 2 Image" width="300" height="200">
-                      <p style="text-align: justify;">Este paquete es perfecto para la organización de conferencias, congresos y otros eventos empresariales. Incluye alquiler de espacio, equipo audiovisual, catering, servicio de traducción simultánea, alojamiento para los asistentes, y cualquier otro servicio que se necesite.</p>
-                      <p style="text-align: center;">Precio: $120.00</p>
-                      <button class="btn btn-primary" onclick="location.href='/preinscripcionGuardada.html'">Elegir</button>
-                  </div>
+                <div class="col-md-8">
+                    <ul id="paquetes-container"></ul>
                 </div>
-                <div class="box" id="box3">
-                  <h2 style="font-weight: bold; font-size: 40px; text-align: center;">Paquete 3</h2>
-                  <div class="row align-items-center">
-                      <img src="images/Paquete3.png" alt="Box 3 Image" width="300" height="200">
-                      <p style="text-align: justify;">Este paquete es ideal para celebrar un cumpleaños inolvidable. Incluye decoración temática, música en vivo o DJ, servicio de catering, barra libre, juegos y entretenimiento para los invitados, y todo lo necesario para una fiesta exitosa.</p>
-                      <p style="text-align: center;">Precio: $225.00</p>
-                      <button class="btn btn-primary" onclick="location.href='/preinscripcionGuardada.html'">Elegir</button>
-                  </div>
+                <div class="col-md-2 text-center">
+                    <button class="buton btn-primary" id="next">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
                 </div>
-              </div>
-              <div class="col-md-2 text-center">
-                <button class="buton btn-primary" id="next">
-                  <i class="bi bi-arrow-right"></i>
-                </button>
-              </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -87,44 +61,10 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const boxes = document.querySelectorAll('.box');
-    let currentBoxIndex = 0;
 
-    function updateButtons() {
-      if (currentBoxIndex === 0) {
-        document.querySelector('#prev').disabled = true;
-      } else {
-        document.querySelector('#prev').disabled = false;
-      }
 
-      if (currentBoxIndex === boxes.length - 1) {
-        document.querySelector('#next').disabled = true;
-      } else {
-        document.querySelector('#next').disabled = false;
-      }
-    }
-
-    function showBox(index) {
-      boxes.forEach(box => box.style.display = 'none');
-      boxes[index].style.display = 'block';
-    }
-
-    document.querySelector('#prev').addEventListener('click', () => {
-      currentBoxIndex--;
-      showBox(currentBoxIndex);
-      updateButtons();
-    });
-
-    document.querySelector('#next').addEventListener('click', () => {
-      currentBoxIndex++;
-      showBox(currentBoxIndex);
-      updateButtons();
-    });
-
-    showBox(currentBoxIndex);
-    updateButtons();
-  </script>
+  <script src="prepaquete.js"></script>
 </body>
 </html>
+
 
