@@ -1,10 +1,13 @@
-function obtenerTodosLosEventos() {
-    
-    fetch("http://localhost:8080/eventosEnProgreso", {
+function obtenerTodosLosAmbientes() {
+    var preData = JSON.parse(sessionStorage.getItem('evento'));
+    document.getElementById("ambiente-name").innerText = `Ambientes de ${preData.nombre}`;
+    fetch("http://localhost:8080/VisualizarAmbientes", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json", // Establece el tipo de contenido como JSON
-      },
+      
+      body : JSON.stringify({
+        id_evento : preData.id_evento,
+      })
+      
     })
       .then(response => response.json())
       .then(data => {
@@ -13,7 +16,7 @@ function obtenerTodosLosEventos() {
         const listaEventos = document.getElementById("eventos-list");
   
         eventos.forEach(evento => {
-          const {id_evento, nombre } = evento;
+          const {id_ambiente, nombre } = evento;
           const listItem = document.createElement("li");
 
           var mevento = document.createElement("div");
@@ -21,13 +24,11 @@ function obtenerTodosLosEventos() {
           var buttonsDiv = document.createElement("div");
           var img = document.createElement("img");
           var h4 = document.createElement("h1");
-          var buttonAmbientes = document.createElement("button");
-          var buttonActividades = document.createElement("button");
-          var buttonMateriales = document.createElement("button");
           var buttonAdaptar = document.createElement("button");
           var buttonEditar = document.createElement("img");
           var buttonVer = document.createElement("img");
           var buttonEliminar = document.createElement("img");
+          
           
 
           mevento.className = "mevento";
@@ -42,24 +43,6 @@ function obtenerTodosLosEventos() {
           h4.className = "name-evento";
           h4.innerText = nombre;
 
-          buttonAmbientes.className = "btn2";
-          buttonAmbientes.innerText = "Ambientes";
-          buttonAmbientes.addEventListener("click", function () {
-            RedirectAmbientes(evento);
-          });
-
-          buttonActividades.className = "btn2";
-          buttonActividades.innerText = "Actividades";
-          buttonActividades.addEventListener("click", function () {
-            RedirectActividades(evento);
-          });
-
-          buttonMateriales.className = "btn2";
-          buttonMateriales.innerText = "Materiales";
-          buttonMateriales.addEventListener("click", function () {
-            RedirectMateriales(evento);
-          });
-
           buttonAdaptar.className = "btn2";
           buttonAdaptar.innerText = "Adaptar";
           buttonAdaptar.addEventListener("click", function () {
@@ -69,30 +52,25 @@ function obtenerTodosLosEventos() {
           buttonVer.className = "img-button ";
           buttonVer.src = "/images/ver.png";
           buttonVer.addEventListener("click", function () {
-            RedirectVerEvento(evento);
+            RedirectVer(evento);
           });
 
           buttonEditar.className = "img-button ";
           buttonEditar.src = "/images/editar.png";
           buttonEditar.addEventListener("click", function () {
-            RedirectEditar(evento);
-          
+            RedirectModificar(evento);
           });
           
           buttonEliminar.className = "img-button ";
           buttonEliminar.src = "/images/eliminar.png";
           buttonEliminar.addEventListener("click", function () {
-            EliminarEvento(id_evento);
+            EliminarEvento(id_ambiente);
           });
 
 
           
           eventoInfoDiv.appendChild(img);
           eventoInfoDiv.appendChild(h4);
-          buttonsDiv.appendChild(buttonAmbientes);
-          buttonsDiv.appendChild(buttonActividades);
-          buttonsDiv.appendChild(buttonMateriales);
-       
           buttonsDiv.appendChild(buttonAdaptar);
           buttonsDiv.appendChild(buttonVer);
           buttonsDiv.appendChild(buttonEditar);
@@ -110,48 +88,45 @@ function obtenerTodosLosEventos() {
       });
   }
 
-function RedirectVerEvento(evento) {
-  sessionStorage.setItem("evento", JSON.stringify(evento));
-  location.href = "/VerEvento.html";
-}
 
-function RedirectAmbientes(evento) {
-  sessionStorage.setItem("evento", JSON.stringify(evento));
-  location.href = "/VisualizarAmbientes.html";
-}
-
-function RedirectActividades(evento) {
+function RedirectVer(evento) {
     sessionStorage.setItem("evento", JSON.stringify(evento));
-    location.href = "/VisualizarActividades.html"; 
-}
+    location.href = "/VerAmbiente.html"; 
+  }
 
-function RedirectMateriales(evento) {
-    sessionStorage.setItem("evento", JSON.stringify(evento));
+function RedirecActividades(ambiente) {
+    sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
+    // PROXIMAMENTE
+    //location.href = "/editarAmbiente.html"; 
+  }
+
+function RedirectMateriales(ambiente) {
+    sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
     // PROXIMAMENTE
     //location.href = "/editarAmbiente.html";
   }
-function RedirectEditar(evento) {
-  sessionStorage.setItem("evento", JSON.stringify(evento));
-  location.href = "/editarEvento.html";
+function RedirectModificar(ambiente) {
+  sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
+  location.href = "/editarAmbiente.html";
 }
 
-function RedirectAdaptar(evento) {
-  sessionStorage.setItem("evento", JSON.stringify(evento));
-  location.href = "/AdaptarEvento.html";
+function RedirectAdaptar(ambiente) {
+  sessionStorage.setItem("ambiente", JSON.stringify(ambiente));
+  location.href = "/AdaptarAmbiente.html";
 }
-function EliminarEvento(id_evento) {
-  fetch("http://localhost:8080/EliminarEvento", {
+function EliminarEvento(id_ambiente) {
+  fetch("http://localhost:8080/EliminarAmbiente", {
     method: "POST",
     
-    body: JSON.stringify({ id : id_evento }),
+    body: JSON.stringify({ id : id_ambiente }),
   })
     .then(response => response.json())
     .then(data => {
-      console.log("El evento se ha eliminado correctamente:", data);
+      console.log("El ambiente se ha eliminado correctamente:", data);
       
     })
     .catch(error => {
-      console.error("Error al eliminar el evento:", error);
+      console.error("Error al eliminar el ambiente:", error);
     });
     location.reload();
 }

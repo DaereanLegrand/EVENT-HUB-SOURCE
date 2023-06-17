@@ -247,13 +247,13 @@ body {
     display: flex;
     
     justify-content: start;
-    width: 30%;
+    width: 60%;
 
 }
 
 .buttonsContainer{
     display: flex;
     flex-wrap: wrap;
-    width:70%;
+    width:40%;
     justify-content: end;
 }

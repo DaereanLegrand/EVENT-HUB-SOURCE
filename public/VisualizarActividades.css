@@ -194,8 +194,8 @@ body {
     background-color: #d4c0c0 !important;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    padding-right: 3%;
-    padding-left: 3%;
+    padding-right: 10%;
+    padding-left: 10%;
     
     margin-top: 25px;
     margin-bottom: 25px;
@@ -207,8 +207,8 @@ body {
     border-radius: 10px;
     color: black !important;
     background-color: #E4D0D0 !important;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     
 }
 
@@ -239,21 +239,21 @@ body {
     margin-bottom: 30px;
     height: 3em;
     padding: 5px;
-    margin-left: 7x;
-    margin-right: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .eventoInfo{
     display: flex;
     
     justify-content: start;
-    width: 30%;
+    width: 60%;
 
 }
 
 .buttonsContainer{
     display: flex;
     flex-wrap: wrap;
-    width:70%;
+    width:40%;
     justify-content: end;
 }
