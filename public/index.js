@@ -1,4 +1,4 @@
-function validateCredentials(event) {
+function validarCredenciales(event) {
   event.preventDefault();
   var uname = document.getElementById("floatingInput").value;
   var upass = document.getElementById("floatingPassword").value;

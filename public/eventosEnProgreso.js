@@ -21,6 +21,7 @@ function obtenerTodosLosEventos() {
           var buttonsDiv = document.createElement("div");
           var img = document.createElement("img");
           var h4 = document.createElement("h1");
+          var buttonPaquetes = document.createElement("button");
           var buttonAmbientes = document.createElement("button");
           var buttonActividades = document.createElement("button");
           var buttonMateriales = document.createElement("button");
@@ -41,6 +42,12 @@ function obtenerTodosLosEventos() {
           
           h4.className = "name-evento";
           h4.innerText = nombre;
+            
+          buttonPaquetes.className = "btn2";
+          buttonPaquetes.innerText = "Paquetes";
+          buttonPaquetes.addEventListener("click", function () {
+            RedirectPaquetes(evento);
+          });
 
           buttonAmbientes.className = "btn2";
           buttonAmbientes.innerText = "Ambientes";
@@ -89,6 +96,7 @@ function obtenerTodosLosEventos() {
           
           eventoInfoDiv.appendChild(img);
           eventoInfoDiv.appendChild(h4);
+          buttonsDiv.appendChild(buttonPaquetes);
           buttonsDiv.appendChild(buttonAmbientes);
           buttonsDiv.appendChild(buttonActividades);
           buttonsDiv.appendChild(buttonMateriales);
@@ -109,6 +117,11 @@ function obtenerTodosLosEventos() {
         console.error("Error al obtener los eventos:", error);
       });
   }
+
+function RedirectPaquetes(evento) {
+  sessionStorage.setItem("evento", JSON.stringify(evento));
+  location.href = "/VisualizarPaquetes.html";
+}
 
 function RedirectVerEvento(evento) {
   sessionStorage.setItem("evento", JSON.stringify(evento));

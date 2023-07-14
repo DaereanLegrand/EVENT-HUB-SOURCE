@@ -40,6 +40,8 @@ fetch("http://localhost:8080/paquetesPorEvento", {
         var mpaquete = document.createElement("div");
         var img = document.createElement("img");
         var h4 = document.createElement("h1");
+        var desc = document.createElement("p");
+        var prix = document.createElement("p");
         var buttonElegir = document.createElement("button");
 
         mpaquete.className = "mpaquete";
@@ -49,12 +51,20 @@ fetch("http://localhost:8080/paquetesPorEvento", {
         h4.className = "name-paquete";
         h4.innerText = nombre;
 
+        desc.className = "desc-paquete";
+        desc.innerText = descripcion;
+
+        prix.className = "precio-paquete";
+        prix.innerText = precio;
+
         buttonElegir.className = "btn btn-primary";
         buttonElegir.innerText = "Elegir";
         buttonElegir.addEventListener("click", function() { Elegir(paquete); });
 
         mpaquete.appendChild(img);
         mpaquete.appendChild(h4);
+        mpaquete.appendChild(desc);
+        mpaquete.appendChild(prix);
         mpaquete.appendChild(buttonElegir);
 
         listItem.appendChild(mpaquete);
